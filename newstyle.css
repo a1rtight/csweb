@@ -1,0 +1,1075 @@
+<style>
+/*GLOBAL*/
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    scroll-behavior: [ auto | smooth];
+    font-weight: normal;
+    font-style: normal;
+    font-kerning: normal;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+    /* padding-top: 3rem; */
+    color: var(--basegrey)
+}
+:root {
+    --black: #000;
+    --white: #fff;
+    --basegrey: #888;
+    --lightgrey: #DBDBDB;
+    --c1: #F8F8F8;
+    --c2: #FAF9F0;
+    --c3: #DFDCD8;
+    --c4: #414245;
+    --c5: #000;
+    --chover: #FF3D00;
+}
+/* TYPOGRAPHY  */
+.bold {
+    font-family: "Twklausanne 600";
+}
+.baseline{
+    align-self: end;
+    padding-bottom: 3rem;
+}
+h2,
+p,
+figure,
+a {
+    font-family: "Twklausanne 300";
+    font-weight: 300;
+    max-width: 70ch;
+}
+h1,
+h2 {
+    margin: 0;
+    padding: 0;
+    max-width: 46ch;
+}
+h1 {
+    font-family: "Twklausanne 200";
+    font-weight: 200;
+    font-size: 1.875rem;
+    line-height: 2.93rem;
+    letter-spacing: -0.05rem;
+    font-weight: 200;
+  
+}
+span.carriagereturn>h1 {
+    padding-bottom: .7rem;
+}
+/* span.tab>h1 {
+    padding-left: 25%;
+} */
+h1 {
+    display: flex;
+    align-items: flex-start;
+    /* Align items to the start */
+    overflow: hidden;
+}
+h1 span+* {
+    flex-shrink: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.arrow {
+    margin-left: 25%;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+.tab{
+    margin-left: 25%;
+}
+@media screen and (max-width: 766px) {
+    .arrow{
+        margin-left: 1ch;
+    }
+    .tab{
+        margin-left: 2.2ch;
+    }
+}
+h2 {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    letter-spacing: -0.03rem;
+}
+span.leadcarriagereturn>h2 {
+    padding-bottom: .7rem;
+}
+span.carriagereturn>h2 {
+    padding-bottom: .44rem;
+}
+span.paragraphbreak>h2 {
+    padding-bottom: 2.6rem;
+}
+/* paragraph break for first hidden para */
+.hiddenparagraphbreak {
+    margin-top: 2.62rem;
+}
+/* paragraph break for rest of hidden paras accounting for no grid row gap */
+span.extraparagraphbreak>h2 {
+    padding-bottom: calc(2.62rem + 7px);
+}
+h2 br {
+    margin-bottom: 50px;
+}
+p.carriagereturn{
+    padding-bottom: 1rem ;
+}
+p,
+nav a {
+    font-size: 1.04rem;
+    line-height: 1.85rem;
+    letter-spacing: -0.03rem;
+    margin: 0;
+    padding: 0;
+    max-width: 84ch;
+}
+a,
+figure {
+    display: block;
+    font-size: .8rem;
+    line-height: 1.7rem;
+}
+a {
+    color: var(--basegrey);
+    text-decoration: none;
+    transition-duration: 600ms;
+    transition-property: color;
+    transition-timing-function: quintic;
+    -webkit-transition-duration: 600ms;
+    -webkit-transition-property: color;
+    -webkit-transition-timing-function: quintic;
+    -moz-transition-duration: 600ms;
+    -moz-transition-property: color;
+    -moz-transition-timing-function: quintic;
+    -o-transition-duration: 600ms;
+    -o-transition-property: color;
+    -o-transition-timing-function: quintic;
+}
+a:hover,
+a.currentmenuitem {
+    color: var(--black);
+    cursor: pointer;
+}
+
+figure.bold {
+    margin-bottom: 0;
+}
+/*TABLET TYPOGRAPHY*/
+@media screen and (max-width: 1364px) {
+    h1 {
+        font-size: 1.74rem;
+        line-height: 2.7rem;
+    }
+}
+/*MOBILE TYPOGRAPHY*/
+@media screen and (max-width: 766px) {
+    h1 {
+        font-family: "Twklausanne 250;
+ font-weight: 250;
+        font-size: 1.6rem;
+        line-height: 2.43rem;
+    }
+    h2 {
+        font-size: 1.22rem;
+        line-height: 1.9rem;
+    }
+    span.carriagereturn>h2 {
+        padding-bottom: .4rem;
+    }
+    span.paragraphbreak>h2 {
+        padding-bottom: 2rem;
+    }
+    /* paragraph break for first hidden para */
+    .hiddenparagraphbreak {
+        margin-top: 2.02rem;
+    }
+    /* paragraph break for rest of hidden paras accounting for no grid row gap */
+    span.extraparagraphbreak>h2 {
+        padding-bottom: 2.02rem;
+    }
+    p {
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        letter-spacing: -0.015rem;
+    }
+}
+/* STRUCTURAL */
+.margin {
+    width: 2rem;
+}
+@media screen and (max-width: 766px) {
+    .margin {
+        width: .2rem;
+        /* max-width: .2rem; */
+    }
+}
+/* Menu controls */
+.menublock {
+    position: fixed;
+    top: 0;
+    left: calc(2rem + 7px);
+    width: calc((100vw - (4rem + 35px)) / 4);
+    padding-bottom: 2.65rem;
+}
+.headerlogo svg {
+    display: block;
+    height: 3.4rem;
+    margin: 2.65rem 0 3.4rem 0;
+}
+/* serves as top body padding */
+.mobilemenublock {
+    padding-top: 2.5rem;
+}
+#togglemenu,
+label[for=togglemenu] {
+    display: none;
+}
+/* nav reveal and animation */
+nav.mobilenav {
+    display: block;
+    /* Ensure it's always in the layout */
+    visibility: hidden;
+    /* Hide it initially */
+    overflow: hidden;
+    height: 0px;
+    -webkit-transition: height 0.4s cubic-bezier(0.2, 0.8, 0.1, 1);
+    transition: height 0.4s cubic-bezier(0.2, 0.8, 0.1, 1);
+}
+@media screen and (max-width: 1364px) {
+    /* body {
+        padding-top: 8rem;
+    } */
+    .menublock a {
+        visibility: hidden;
+    }
+    .menublock {
+        position: relative !important;
+        display: block;
+        left: 0;
+        grid-column: 2 / 14 !important;
+        grid-row: 1 / 1 !important;
+        width: 100%;
+        height: 4rem;
+        }
+    nav.nav{
+        height: 0;
+    }
+    .headerlogo svg {
+        display: block;
+        height: 2.62rem;
+        margin: 1rem 0 1rem 0;
+    }
+    label[for=togglemenu] {
+        display: flex;
+        position: absolute;
+        top: 1.3rem;
+        /* account for the grid gap before the true margin */
+        right: calc(2rem + 7px);
+        height: 2rem;
+        width: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+    @media screen and (max-width: 766px) {
+        label[for=togglemenu] {
+            right: calc(.2rem + 7px);
+        }
+    }
+    /* serves as top body padding */
+    .mobilemenublock {
+        padding-top: 7rem;
+    }
+    #togglemenu:checked~nav.mobilenav {
+        height: 18rem;
+        visibility: visible;
+    }
+    #togglemenu:checked~nav.mobilenav a {
+        opacity: 1;
+    }
+    /* menu icon controls */
+    .menu-toggle {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+    }
+    /* Default state of the menu icon */
+    .menu-icon {
+        position: relative;
+        width: 32px;
+        height: 32px;
+        transition: transform 0.3s ease;
+    }
+    .menu-icon span {
+        background-color: var(--basegrey);
+        display: block;
+        position: absolute;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        transition-property: transform, opacity;
+    }
+    .menu-icon span:first-child {
+        height: .11rem;
+        width: 32px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    .menu-icon span:last-child {
+        width: .11rem;
+        height: 32px;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+    /* Rotate the plus 270 degrees and reset on uncheck */
+    #togglemenu:checked~label .menu-icon {
+        transform: rotate(270deg);
+    }
+    #togglemenu:not(:checked)~label .menu-icon {
+        transform: rotate(0deg);
+    }
+    /* Shrink the originally horizontal rectangle (now vertical) to the center and reset on uncheck */
+    #togglemenu:checked~label .menu-icon span:first-child {
+        transform: translateY(-50%) scaleX(0);
+        /* Shrink the first span */
+        opacity: 0;
+    }
+    #togglemenu:not(:checked)~label .menu-icon span:first-child {
+        transform: translateY(-50%) scaleX(1);
+        /* Reset scaleX to 1 */
+        opacity: 1;
+    }
+    /* Navigation Menu Transitions */
+    nav.mobilenav {
+        transition-property: height, visibility;
+        transition-duration: 0.4s;
+        transition-timing-function: cubic-bezier(0.2, 0.8, 0.1, 1);
+    }
+    nav.mobilenav a {
+        transition-property: opacity;
+        transition-duration: 1.9s;
+        transition-timing-function: cubic-bezier(0.2, 0.8, 0.1, 1);
+        transition-delay: 1s;
+    }
+}
+.backdrop-filter {
+    backdrop-filter: blur(30px);
+    /* Example filter */
+}
+/* @media screen and (max-width: 766px) {
+    .standardspacer {
+        margin-bottom: 6rem;
+    }
+} */
+/* Universal spacing */
+/* stacking for content under headers */
+@media screen and (max-width: 766px) {
+    .stackable {
+        margin-top: 4rem;
+    }
+}
+.overline {
+    border-top: 1px solid var(--lightgrey);
+}
+.overlinespacer {
+    margin-top: .4rem;
+}
+.smallspacer {
+    margin-bottom: 4.2rem;
+}
+.extrasmallspacer {
+    margin-bottom: 2rem;
+}
+.standardspacer,
+/* the responsive variant is usedwhen a full sized section break is needed on desktop but not on mobile */
+.standardspacerresponsive {
+    margin-bottom: 9.3rem;
+}
+.largespacer{
+    margin-bottom: 16rem;
+}
+@media screen and (max-width: 766px) {
+    .standardspacer {
+        margin-bottom: 7rem;
+    }
+    .standardspacerresponsive {
+        margin-bottom: 3.3rem;
+    }
+    .overlinespacer.stackable {
+        margin-top: 4rem;
+    }
+    .largespacer{
+        margin-bottom: 12rem;
+    }
+}
+/* Adjust spacing for naturally stacking text */
+.thirdgrid2 p {
+    margin-top: 4rem;
+}
+@media screen and (max-width: 766px) {
+    .thirdgrid2 p {
+        margin-top: 3.4rem;
+    }
+}
+/* GRID ALIGNMENT */
+/* Set all initial grid alignments in webflow – only specify here if changing from one alignment to another */
+/* Grid positions to be set in webflow interface – Spec sheet: 
+(note webflow interface and coded grid positions have disparity of 1 so col 13 in wf is 14 in code)
+fullGrid            2 / 13
+halfGridLeft        2 / 7 
+halfGridRight       8 / 13
+twoThirdsGridRight  6 / 13
+thirdGrid1          2 / 5
+thirdGrid2          6 / 9
+thirdGrid3          10 / 13
+quarterGrid1        2 / 4
+quarterGrid2        5 / 7
+quarterGrid3        8 / 10
+quarterGrid4        11 / 13
+sixthGrid           --
+keyColumn           7 / 8
+*/
+/* Nested grids 
+For images
+quarterGrid
+sixthGrid 
+For text
+subgridFaq
+*/
+/* .subgridfaq {}
+.fullgrid {}
+.halfgridleft {}
+.halfgridright {}
+.twothirdsgridright {}
+.thirdgrid1 {}
+.thirdgrid2 {}
+.thirdgrid3 {} */
+
+/* margin top for leading image */
+.leadimage{
+    margin-top: 5.8rem;
+}
+
+
+/* Change any grid portion to full width */
+@media screen and (max-width: 1364px) {
+   
+   .fullgrid,
+    .twothirdsgridright,
+    .keycolumn {
+        grid-column: 2 / 14 !important;
+    }
+
+    /* for nested grids, namely hero images and text */
+    .fullgrid .halfgridleft {
+        grid-column: 1 / 13 !important;
+    }
+    .fullgrid .halfgridright  {
+        grid-column: 4 / 13 !important;
+        grid-row: 2 / 2 !important;
+    }
+    /* change h1 text to sit at top  */
+    .fullgrid .halfgridright .baseline{
+        align-self: flex-start;
+        padding-bottom: 0;
+    }
+    }
+
+    /* move hero to fullscreen */
+    @media screen and (max-width: 766px) {
+        .fullgrid .halfgridright  {
+            grid-column: 1 / 13 !important;
+        }
+
+    }
+
+
+
+
+
+/* Change any grid portion to left half */
+@media screen and (max-width: 1364px) {
+    .thirdgrid2 {
+        grid-column: 2 / 7 !important;
+    }
+}
+/* Change any grid portion to right half */
+@media screen and (max-width: 1364px) {
+    .thirdgrid3 {
+        grid-column: 8 / 14 !important;
+    }
+}
+/* Change any grid portion to full width */
+@media screen and (max-width: 766px) {
+    .thirdgrid2,
+    .thirdgrid3 {
+        grid-column: 2 / 14 !important;
+    }
+}
+/* Nested grids */
+/* Controls for FAQ grid */
+/* Hide functional checkboxes */
+.checkbox {
+    display: none;
+}
+/* Initially hide the fullgrid container */
+.fullgrid.collapsiblefaq {
+    max-height: 0px;
+    overflow: hidden;
+    -webkit-transition: max-height 0.8s cubic-bezier(0.2, 0.8, 0.1, 1);
+    transition: max-height 0.8s cubic-bezier(0.2, 0.8, 0.1, 1);
+}
+/* Style for the 'See more' label */
+.seemorelabel {
+    display: block;
+    cursor: pointer;
+    margin-top: calc(2.6rem - 7px);
+    /* Additional styling for the label */
+}
+.subgridfaq .keycolumn {
+    /* move the key within the div's grid */
+    padding-top: .176rem;
+}
+@media screen and (max-width: 1364px) {
+    .subgridfaq {
+        /* move the div on the grid */
+        grid-column: 7 / 14 !important;
+        /* add columns to match the main grid */
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr !important;
+    }
+    .subgridfaq .thirdgrid3 {
+        /* move the content within the div's grid */
+        grid-column: 8 / 14 !important;
+    }
+    .subgridfaq .keycolumn {
+        /* move the key within the div's grid */
+        grid-column: 1 / 1 !important;
+        margin-left: 50%;
+    }
+    .faqtext {
+        grid-column: 2 / 8 !important;
+    }
+    /* Controls for collapsible FAQ subgroup*/
+    .fullgrid .subgridfaq {
+        /* move the div on the grid */
+        grid-column: 6 / 13 !important;
+        /* add columns to match the main grid */
+    }
+    .fullgrid .subgridfaq .keycolumn {
+        /* move the key within the div's grid */
+        grid-column: 1 / 1 !important;
+        padding-top: .176rem;
+        margin-left: 50%;
+    }
+    .fullgrid .faqtext {
+        grid-column: 2 / 8 !important;
+    }
+    .seemorelabel {
+        grid-column: 8 / 13 !important;
+    }
+}
+@media screen and (max-width: 766px) {
+    /* move keycolumn to left alignment */
+    .subgridfaq .keycolumn {
+        margin-left: 0;
+        padding-top: .15rem;
+    }
+    .subgridfaq {
+        /* move the div on the grid */
+        grid-column: 2 / 14 !important;
+        /* add columns to match the main grid */
+        grid-template-columns: repeat(12, 1fr) !important;
+        /* margin-top: 2.8rem; */
+    }
+    .faqtext {
+        grid-column: 1 / 13 !important;
+    }
+    .faqtext h2 {
+        margin-left: 3ch;
+    }
+    /* .faqtext a.seemore {
+        margin-left: 0;
+    } */
+    /* Controls for collapsible FAQ subgroup*/
+    .fullgrid .subgridfaq {
+        /* move the div on the grid */
+        grid-column: 1 / 13 !important;
+        /* add columns to match the main grid */
+        grid-template-columns: repeat(12, 1fr) !important;
+        /* margin-top: 2.8rem; */
+    }
+    .fullgrid .subgridfaq .faqtext {
+        grid-column: 1 / 12 !important;
+    }
+    .fullgrid .subgridfaq .keycolumn {
+        margin-left: 0;
+    }
+    .fullgrid .faqtext h2 {
+        margin-left: 3ch;
+    }
+    .seemorelabel {
+        grid-column: 2 / 13 !important;
+        margin-left: 4.6ch;
+    }
+}
+/* Controls for Images */
+/* Logos */
+.footerlogo .st0,
+.pinwheel,
+.headerlogo .st0 {
+    fill: var(--basegrey);
+}
+/* @media screen and (max-width: 766px){
+    .headerlogo{
+        max-width: 8rem;
+    }
+} */
+.footerlogo {
+    width: 7rem;
+}
+@media screen and (max-width: 1364px) {
+    .footerlogo {
+        max-width: 8rem;
+    }
+}
+/* Handle square containers */
+/* Ensure squares stay square*/
+.quartergrid1,
+.quartergrid2,
+.quartergrid3,
+.quartergrid4,
+.sixthgrid1,
+.sixthgrid2,
+.sixthgrid3,
+.sixthgrid4,
+.sixthgrid5,
+.sixthgrid6 {
+    aspect-ratio: 1 / 1;
+    overflow-y: hidden;
+}
+/* Sets odd numbers to left half of grid 
+Expand on these rules later for specific requiremnets e.g masonry */
+@media screen and (max-width: 766px) {
+    .quartergrid1,
+    .quartergrid3,
+    .sixthgrid1,
+    .sixthgrid3,
+    .sixthgrid5 {
+        grid-column: 8 / 14 !important;
+    }
+    /* Sets even numbers to right half of grid */
+    .quartergrid2,
+    .quartergrid4,
+    .sixthgrid2,
+    .sixthgrid4,
+    .sixthgrid6 {
+        grid-column: 2 / 8 !important;
+    }
+}
+/*controls for quarter grid*/
+@media screen and (max-width: 766px) {
+    .fullgrid {
+        grid-row-gap: 7px !important;
+    }
+    .mobileheroimage {
+        grid-column: 1 / 13 !important;
+    }
+    .quartergrid3 {
+        grid-column: 1 / 7 !important;
+        grid-row: 2 / 2 !important;
+    }
+    .quartergrid4 {
+        grid-column: 7 / 13 !important;
+        grid-row: 3 / 3 !important;
+    }
+}
+/*controls for sixth grid*/
+/* dual images with text configuration */
+.sixthgrid5,
+.sixthgrid6 {
+    min-width: 100%;
+}
+/* prevent images from shrinking too small */
+@media screen and (max-width: 1364px) {
+    .sixthgrid5.dualimage {
+        grid-column: 8 / 11 !important;
+    }
+    .sixthgrid6.dualimage {
+        grid-column: 11 / 14 !important;
+    }
+}
+/* align images to each half */
+@media screen and (max-width: 766px) {
+    .sixthgrid5.dualimage {
+        grid-column: 2 / 8 !important;
+        margin-top: 4rem;
+    }
+    .sixthgrid6.dualimage {
+        grid-column: 8 / 14 !important;
+        margin-top: 4rem;
+    }
+    /* stack text, each instance must have its own class instance here with appropriate grid row for page */
+    .dualimagetext1 {
+        grid-row: 10 / 11 !important;
+    }
+}
+.newsitem{
+    padding: .4rem;
+    position: relative;
+}
+.newsitem figure{
+    position: absolute;
+    right:.4rem;
+    bottom: 0;
+}
+@media screen and (max-width: 1364px) {
+.newsitem h2 {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    letter-spacing: -0.015rem;
+}
+}
+/* footer controls */
+/* whitespace top and bottom */
+.footerblock {
+    margin-top: 24rem;
+}
+@media screen and (max-width: 1364px) {
+    .footerblock {
+        margin-top: 20rem;
+        padding-bottom: 2rem;
+    }
+}
+@media screen and (max-width: 766px) {
+    .footerblock {
+        margin-top: 7rem;
+        padding-bottom: 1rem;
+        border-top: 1px solid var(--lightgrey);
+        padding-top: .8rem;
+    }
+}
+/* footer logo */
+.footerlogo {
+    grid-column: 1 / 3 !important;
+    grid-row: 1/1 !important;
+}
+/* main blocks */
+.socialblock {
+    grid-column: 9 / 9 !important;
+}
+.legalblock {
+    grid-column: 10 / 12 !important;
+    margin-left: 25%;
+}
+.contactblock {
+    grid-column: 12 / 12 !important;
+}
+@media screen and (max-width: 1364px) {
+    .socialblock,
+    .contactblock {
+        grid-column: 7 / 13 !important;
+        margin-left: 0;
+        grid-row: 1/1 !important;
+    }
+    .legalblock {
+        grid-column: 7 / 13 !important;
+        grid-row: 1/1 !important;
+        margin-top: 10rem;
+        margin-left: 0;
+    }
+    .contactblock {
+        grid-column: 10 / 13 !important;
+    }
+}
+/* end credits */
+.credscopyright {
+    grid-column: 1 / 3 !important;
+}
+.credsrights {
+    grid-column: 9 / 11 !important;
+}
+.credsauthor {
+    grid-column: 10 / 12 !important;
+    margin-left: 25%;
+}
+.credscopyright,
+.credsrights,
+.credsauthor {
+    grid-row: 2 / 2 !important;
+    margin-top: 9rem;
+    margin-bottom: 1rem;
+}
+@media screen and (max-width: 1364px) {
+    .credsrights {
+        display: none;
+    }
+    .credscopyright,
+    .credsauthor {
+        grid-column: 7 / 13 !important;
+        margin-left: 0;
+        margin-top: 3rem;
+    }
+    .credsauthor {
+        /* change to incorporate line height of figure */
+        margin-top: 4.2rem;
+    }
+}
+@media screen and (max-width: 766px) {
+    .footerlogo {
+        grid-column: 1 / 6 !important;
+        /* width: 8rem; */
+    }
+    /* Hide text on footer logo */
+    .footerlogo .st0 {
+        display: none;
+    }
+}
+/* Scroll to top controls*/
+.scrolltop {
+    width: 2rem;
+    height: 2rem;
+    display: none;
+}
+@media screen and (max-width: 1364px) {
+    .scrolltop {
+        width: 2rem;
+        height: 2rem;
+        display: none;
+        background: greenyellow;
+        grid-column: 12 / 13 !important;
+    }
+}
+</style>
+
+<style>
+
+
+
+/* NEWSPAGE SETTINGS */
+/* structural controls */
+.newsgrid {
+    grid-auto-flow: dense;
+}
+@media screen and (max-width: 660px) {
+.newsgrid.landing{
+    padding-top: 4rem;
+}
+}
+.newsitem {
+    padding: .4rem;
+    position: relative;
+    background: #414245;
+    aspect-ratio: 1 / 1;
+    overflow-y: hidden;
+    transition-property: background-color;
+    transition-timing-function: ease;
+    transition-duration: 700ms;
+ 
+
+}
+.newsitem.blank {
+   background-color:rgba(0,0,0,0);
+}
+.newsitem.dynamic-blank,
+.newsitem.tablet-dynamic-blank,
+.newsitem.tablet-dynamic-blank-double
+    {
+    background-color:rgba(0,0,0,0);
+}
+/* colours */
+.c1{
+    background-color: var(--c1);
+}
+.c2{
+    background-color: var(--c2);
+}
+.c3{
+    background-color: var(--c3);
+}
+.c3{
+    background-color: var(--c3);
+}
+.c4{
+    background-color: var(--c4);
+}
+.c5{
+    background-color: var(--c5);
+}
+.newsitem.c1:hover,
+.newsitem.c2:hover,
+.newsitem.c3:hover,
+.newsitem.c4:hover,
+.newsitem.c5:hover{
+    background: var(--chover);
+    color: var(--white);
+    cursor:pointer;
+}
+/* Redistrubute rows to quarters */
+@media screen and (max-width: 1364px) {
+    .newsitem {
+        grid-column: span 3 !important;
+    }
+    .newsitem.blank.expanding.tablet {
+        grid-column: span 6 !important;
+        aspect-ratio: 2 / 1;
+    }
+    .newsitem.blank.collapsing.tablet {
+        display: none;
+    }
+   
+}
+/* Redistrubute rows to halves */
+@media screen and (max-width: 660px) {
+    .newsitem {
+        grid-column: span 6 !important;
+    }
+    .newsitem.blank.collapsing.mobile {
+        display: none;
+    }
+    .newsitem.blank.collapsing.tablet.mobile {
+        display: none;
+    }
+    .newsitem.blank.collapsing.tablet {
+        display: block;
+    }
+}
+/* typographic controls */
+.newsitem figure {
+    position: absolute;
+    right: .8rem;
+    bottom: .4rem;
+    line-height: 1px;
+}
+.newsitem h2 {
+    line-height: 1.8rem;
+}
+/*arrow animation controls*/
+.arrow-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden; /* Adjust as needed */
+    width:4ch;
+}
+@media screen and (max-width: 766px) {
+.arrow-container {
+    width:4ch;
+}
+.arrow {
+margin-left:.4rem
+}
+}
+
+.arrow {
+    transform: translateX(-100%);
+    -webkit-transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.1, 1);
+ transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.1, 1);
+    opacity:0;
+    line-height: 2rem;
+}
+
+.newsitem:hover .arrow {
+    transform: translateX(0);
+    opacity:1;
+}
+
+
+@media screen and (min-width: 1940px) {
+    .newsitem {
+        padding: 1rem;
+    }
+    .newsitem h2 {
+        font-family: "Twklausanne 200";
+        font-weight: 200;
+        font-size: 1.875rem;
+        line-height: 2.3rem;
+        letter-spacing: -0.05rem;
+        font-weight: 200;
+        max-width: 50ch;
+    }
+    .newsitem figure {
+        bottom: .2rem;
+        right: 1.2rem;
+        font-size: 1.1rem;
+        line-height: 1.4rem;
+        letter-spacing: -0.015rem;
+    }
+}
+@media screen and (max-width: 1364px) {
+    .newsitem figure {
+        bottom: .18rem;
+        right: .6rem;
+    }
+}
+@media screen and (max-width: 970px) {
+    .newsitem h2 {
+        font-size: 1.1rem;
+        line-height: 1.4rem;
+        letter-spacing: -0.015rem;
+    }
+}
+@media only screen and (min-width: 500px) and (max-width: 660px) {
+    .newsitem h2 {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+    }
+}
+@media screen and (max-width: 380px) {
+    .newsitem h2 {
+        font-size: .8rem;
+        line-height: 1.2rem;
+    }
+}
+
+
+
+
+/* Nested text & image */
+@media screen and (max-width: 1364px) {
+    .fullgrid .twothirdsgridright{
+     grid-column: 1 / 13 !important;
+    }
+    /* position text */
+    .fullgrid .twothirdsgridright .thirdgrid2{
+     grid-column: 1 / 6 !important;
+    }
+    /* position images */
+     .sixthgrid5.dualimage {
+     grid-column: 7 / 10 !important;
+     }
+     .sixthgrid6.dualimage {
+     grid-column: 10 / 13 !important;
+     }
+    }
+    /* enable full width */
+    @media screen and (max-width: 766px) {
+    .fullgrid .twothirdsgridright .thirdgrid2{
+     grid-column: 1 / 13 !important;
+    }
+    /* vertically assign headings, images and text */
+    .fullgrid .twothirdsgridright .thirdgrid2.heading{
+     grid-row: 1 / 1 !important;
+    }
+     .sixthgrid5.dualimage {
+     grid-column: 1 / 7 !important;
+     grid-row: 2 / 2 !important;
+     }
+     .sixthgrid6.dualimage {
+     grid-column: 7 / 13 !important;
+     grid-row: 2 / 2 !important;
+     }
+     .fullgrid .twothirdsgridright .thirdgrid2{
+     grid-row: 3 / 3 !important;
+    }
+    }
+
+</style>
