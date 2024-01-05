@@ -1,4 +1,3 @@
-<script>
 
 //Fix menu
 window.addEventListener('scroll', function() {
@@ -156,6 +155,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-
-</script>
