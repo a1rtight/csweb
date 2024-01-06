@@ -155,3 +155,52 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
+
+//MECHANICS SEE MORE TOGGLES
+document.addEventListener('DOMContentLoaded', function () {
+    // Function to handle the toggle
+    function setupToggle(checkboxId, containerClass) {
+        var checkbox = document.getElementById(checkboxId);
+        var collapsible = document.querySelector('.' + containerClass);
+
+        if (checkbox && collapsible) {
+            checkbox.addEventListener('change', function () {
+                collapsible.style.maxHeight = this.checked ? collapsible.scrollHeight + 'px' : '0';
+            });
+        }
+    }
+
+    // Setup toggles
+    setupToggle('seemorem1', 'newsgrid.collapsiblemechanics.seemorem1');
+    setupToggle('seemorem2', 'newsgrid.collapsiblemechanics.seemorem2');
+});
+
+// Text change for read more
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Setup for 'seemorem1'
+    var checkbox1 = document.getElementById('seemorem1');
+    var label1 = document.querySelector('label[for="seemorem1"] p');
+
+    checkbox1.addEventListener('change', function () {
+        if (this.checked) {
+            label1.innerHTML = 'See less &uarr;';
+        } else {
+            label1.innerHTML = 'See more &#8600;';
+        }
+    });
+
+    // Setup for 'seemorem2'
+    var checkbox2 = document.getElementById('seemorem2');
+    var label2 = document.querySelector('label[for="seemorem2"] p');
+
+    checkbox2.addEventListener('change', function () {
+        if (this.checked) {
+            label2.innerHTML = 'See less &uarr;';
+        } else {
+            label2.innerHTML = 'See more &#8600;';
+        }
+    });
+
+});
