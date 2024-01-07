@@ -39,6 +39,7 @@
    a {
     font-family: "Twklausanne 300";
     font-weight: 300;
+    max-width: 64ch;
    }
    h1,
    h2 {
