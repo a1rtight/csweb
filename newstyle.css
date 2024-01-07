@@ -898,6 +898,90 @@ margin-left:.4rem
 }
 
 
+/* MECHANICS GRID CONTROLS */
+/* collapsible containers for see more mechanics blocks */
+.mechanicsparent1,
+.mechanicsparent2{
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.8s cubic-bezier(0.2, 0.8, 0.1, 1);
+    transition: max-height 0.8s cubic-bezier(0.2, 0.8, 0.1, 1);
+}
+/* controls for background images */
+.imagebackground {
+  background-size: cover;
+  background-position: center;
+  min-height: 100%;
+  opacity:.55;
+      transition-property: opacity;
+    transition-timing-function: ease;
+    transition-duration: 700ms;
+}
+/* fixing type for mechanics newsitems */
+.newsitem.mechanic h2{
+    position: absolute;
+    top: .4rem;
+    left: .4rem;
+    z-index: 4;
+}
+.newsitem.mechanic figure{
+    z-index: 4;
+}
+.newsitem.mechanic{
+padding:0
+}
+
+/* interaction controls */
+#playbutton {
+    fill: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 20%; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index:5;
+    opacity:.5;
+    mix-blend-mode: hard-light;
+    transition-property: opacity;
+    transition-timing-function: ease;
+    transition-duration: 850ms;
+}
+.newsitem.mechanic{
+    transition-property: background-color;
+    transition-timing-function: ease;
+    transition-duration: 700ms;
+}
+.newsitem.mechanic:hover{
+background-color:white;
+cursor: pointer;
+}
+.newsitem.mechanic:hover .imagebackground {
+  opacity:.1;
+}
+.newsitem.mechanic:hover #playbutton {
+  opacity: 1;
+mix-blend-mode: normal;
+}
+
+/* seemore midline divider controls */
+.midlineparent {
+    display: flex; /* Establish flex container */
+    align-items: center; /* Align items vertically in the center */
+}
+.midlineparent label {
+    white-space: nowrap; /* Ensure the label text doesn't wrap */
+    margin-right: 10px; /* Optional: space between label and div */
+}
+.midline {
+    flex-grow: 1; /* Allow the div to take up remaining space */
+    /* Your styles for midline div */
+    border-top: 1px solid var(--lightgrey);
+    height: .6rem;
+}
+
 
 /* DUAL IMAGE SECTION ON LANDING */
 /* Nested text & image */

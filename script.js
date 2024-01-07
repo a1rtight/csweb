@@ -176,31 +176,50 @@ document.addEventListener('DOMContentLoaded', function () {
     setupToggle('seemorem2', 'newsgrid.collapsiblemechanics.seemorem2');
 });
 
-// Text change for read more
 
+
+// MECHANICS EXPANDABLE TOGGLES 
+// Mechanics section
 document.addEventListener('DOMContentLoaded', function () {
-    // Setup for 'seemorem1'
     var checkbox1 = document.getElementById('seemorem1');
-    var label1 = document.querySelector('label[for="seemorem1"] p');
+    var parent1 = document.querySelector('.mechanicsparent1');
+    var gridItems1 = parent1.querySelectorAll('.newsgrid.seemore1 .newsitem');
 
-    checkbox1.addEventListener('change', function () {
-        if (this.checked) {
-            label1.innerHTML = 'See less &uarr;';
-        } else {
-            label1.innerHTML = 'See more &#8600;';
+    function adjustMaxHeight1() {
+        var totalHeight1 = 0;
+        var itemsPerRow1 = window.innerWidth <= 660 ? 2 : Math.floor(parent1.offsetWidth / gridItems1[0].offsetWidth);
+
+        for (let i = 0; i < gridItems1.length; i += itemsPerRow1) {
+            totalHeight1 += gridItems1[i].offsetHeight;
         }
-    });
 
-    // Setup for 'seemorem2'
-    var checkbox2 = document.getElementById('seemorem2');
-    var label2 = document.querySelector('label[for="seemorem2"] p');
+        parent1.style.maxHeight = checkbox1.checked ? totalHeight1 + 'px' : '0';
+    }
 
-    checkbox2.addEventListener('change', function () {
-        if (this.checked) {
-            label2.innerHTML = 'See less &uarr;';
-        } else {
-            label2.innerHTML = 'See more &#8600;';
-        }
-    });
-
+    checkbox1.addEventListener('change', adjustMaxHeight1);
+    window.addEventListener('resize', adjustMaxHeight1);
 });
+
+// Advanced mechanics sections
+document.addEventListener('DOMContentLoaded', function () {
+    var checkbox2 = document.getElementById('seemorem2');
+    var parent2 = document.querySelector('.mechanicsparent2');
+    var gridItems2 = parent2.querySelectorAll('.newsgrid.seemore2 .newsitem');
+
+    function adjustMaxHeight2() {
+        var totalHeight2 = 0;
+        var itemsPerRow2 = window.innerWidth <= 660 ? 2 : Math.floor(parent2.offsetWidth / gridItems2[0].offsetWidth);
+
+        for (let i = 0; i < gridItems2.length; i += itemsPerRow2) {
+            totalHeight2 += gridItems2[i].offsetHeight;
+        }
+
+        parent2.style.maxHeight = checkbox2.checked ? totalHeight2 + 'px' : '0';
+    }
+
+    checkbox2.addEventListener('change', adjustMaxHeight2);
+    window.addEventListener('resize', adjustMaxHeight2);
+});
+
+
+
