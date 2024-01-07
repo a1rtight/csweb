@@ -1,9 +1,8 @@
-/*GLOBAL*/
 * {
     padding: 0;
     margin: 0;
-}
-body {
+   }
+   body {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -15,130 +14,114 @@ body {
     font-kerning: normal;
     margin: 0 !important;
     overflow-x: hidden !important;
-    /* padding-top: 3rem; */
+   
     color: var(--basegrey)
-}
-:root {
+   }
+   :root {
     --black: #000;
     --white: #fff;
     --basegrey: #888;
     --lightgrey: #DBDBDB;
-    --c1: #F8F8F8;
-    --c2: #FAF9F0;
-    --c3: #DFDCD8;
-    --c4: #414245;
-    --c5: #000;
-    --chover: #FF3D00;
-}
-/* TYPOGRAPHY  */
-.bold {
+   }
+   
+   .bold {
     font-family: "Twklausanne 600";
-}
-.baseline{
-    align-self: end;
-    padding-bottom: 3rem;
-}
-h2,
-p,
-figure,
-a {
+   }
+   h2,
+   p,
+   figure,
+   a {
     font-family: "Twklausanne 300";
     font-weight: 300;
-    max-width: 70ch;
-}
-h1,
-h2 {
+   }
+   h1,
+   h2 {
     margin: 0;
     padding: 0;
-    max-width: 46ch;
-}
-h1 {
+   }
+   h1 {
     font-family: "Twklausanne 200";
     font-weight: 200;
     font-size: 1.875rem;
     line-height: 2.93rem;
     letter-spacing: -0.05rem;
     font-weight: 200;
-  
-}
-span.carriagereturn>h1 {
+   }
+   span.carriagereturn>h1 {
     padding-bottom: .7rem;
-}
-/* span.tab>h1 {
-    padding-left: 25%;
-} */
-h1 {
+   }
+   
+   h1 {
     display: flex;
     align-items: flex-start;
-    /* Align items to the start */
+   
     overflow: hidden;
-}
-h1 span+* {
+   }
+   h1 span+* {
     flex-shrink: 1;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-.arrow {
+   }
+   .arrow {
     margin-left: 25%;
     flex-shrink: 0;
     white-space: nowrap;
-}
-.tab{
+   }
+   .tab{
     margin-left: 25%;
-}
-@media screen and (max-width: 766px) {
+   }
+   @media screen and (max-width: 766px) {
     .arrow{
-        margin-left: 1ch;
+    margin-left: 1ch;
     }
     .tab{
-        margin-left: 2.2ch;
+    margin-left: 2.2ch;
     }
-}
-h2 {
+   }
+   h2 {
     font-size: 1.4rem;
     line-height: 2.1rem;
     letter-spacing: -0.03rem;
-}
-span.leadcarriagereturn>h2 {
+   }
+   span.leadcarriagereturn>h2 {
     padding-bottom: .7rem;
-}
-span.carriagereturn>h2 {
+   }
+   span.carriagereturn>h2 {
     padding-bottom: .44rem;
-}
-span.paragraphbreak>h2 {
+   }
+   span.paragraphbreak>h2 {
     padding-bottom: 2.6rem;
-}
-/* paragraph break for first hidden para */
-.hiddenparagraphbreak {
+   }
+   
+   .hiddenparagraphbreak {
     margin-top: 2.62rem;
-}
-/* paragraph break for rest of hidden paras accounting for no grid row gap */
-span.extraparagraphbreak>h2 {
+   }
+   
+   span.extraparagraphbreak>h2 {
     padding-bottom: calc(2.62rem + 7px);
-}
-h2 br {
+   }
+   h2 br {
     margin-bottom: 50px;
-}
-p.carriagereturn{
+   }
+   p.carriagereturn{
     padding-bottom: 1rem ;
-}
-p,
-nav a {
+   }
+   p,
+   nav a {
     font-size: 1.04rem;
     line-height: 1.85rem;
     letter-spacing: -0.03rem;
     margin: 0;
     padding: 0;
-    max-width: 84ch;
-}
-a,
-figure {
+   }
+   a,
+   figure {
     display: block;
     font-size: .8rem;
     line-height: 1.7rem;
-}
-a {
+   }
+   a {
     color: var(--basegrey);
     text-decoration: none;
     transition-duration: 600ms;
@@ -153,55 +136,53 @@ a {
     -o-transition-duration: 600ms;
     -o-transition-property: color;
     -o-transition-timing-function: quintic;
-}
-a:hover,
-a.currentmenuitem {
+   }
+   a:hover {
     color: var(--black);
     cursor: pointer;
-}
-
-figure.bold {
+   }
+   figure.bold {
     margin-bottom: 0;
-}
-/*TABLET TYPOGRAPHY*/
-@media screen and (max-width: 1364px) {
+   }
+   
+   @media screen and (max-width: 1364px) {
     h1 {
-        font-size: 1.74rem;
-        line-height: 2.7rem;
+    font-size: 1.74rem;
+    line-height: 2.7rem;
     }
-}
-/*MOBILE TYPOGRAPHY*/
-@media screen and (max-width: 766px) {
+   }
+   
+   @media screen and (max-width: 766px) {
     h1 {
-        font-family: "Twklausanne 250;
- font-weight: 250;
-        font-size: 1.6rem;
-        line-height: 2.43rem;
+    font-family: "Twklausanne 250;
+    font-weight: 250;
+    font-size: 1.6rem;
+    line-height: 2.43rem;
     }
     h2 {
-        font-size: 1.22rem;
-        line-height: 1.9rem;
+    font-size: 1.22rem;
+    line-height: 1.9rem;
     }
     span.carriagereturn>h2 {
-        padding-bottom: .4rem;
+    padding-bottom: .4rem;
     }
     span.paragraphbreak>h2 {
-        padding-bottom: 2rem;
+    padding-bottom: 2rem;
     }
-    /* paragraph break for first hidden para */
+   
     .hiddenparagraphbreak {
-        margin-top: 2.02rem;
+    margin-top: 2.02rem;
     }
-    /* paragraph break for rest of hidden paras accounting for no grid row gap */
+   
     span.extraparagraphbreak>h2 {
-        padding-bottom: 2.02rem;
+    padding-bottom: 2.02rem;
     }
     p {
-        font-size: 1.1rem;
-        line-height: 1.8rem;
-        letter-spacing: -0.015rem;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    letter-spacing: -0.015rem;
     }
-}
+   }
 /* STRUCTURAL */
 .margin {
     width: 2rem;
