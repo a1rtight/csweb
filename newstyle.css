@@ -52,6 +52,7 @@
     line-height: 2.93rem;
     letter-spacing: -0.05rem;
     font-weight: 200;
+    max-width: 55ch;
    }
    span.carriagereturn>h1 {
     padding-bottom: .7rem;
