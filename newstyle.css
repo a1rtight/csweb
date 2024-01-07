@@ -1027,16 +1027,15 @@ mix-blend-mode: normal;
 /* footer controls */
 /* whitespace top and bottom */
 .fullgrid.footer {
-    margin-top: 24rem;
+    margin-top: 11rem;
 }
 @media screen and (max-width: 1364px) {
-    .fullgrid.footer .footer {
-        margin-top: 20rem;
+    .fullgrid.footer  {
         padding-bottom: 2rem;
     }
 }
 @media screen and (max-width: 766px) {
-    .fullgrid.footer .footer{
+    .fullgrid.footer r{
         margin-top: 7rem;
         padding-bottom: 1rem;
         border-top: 1px solid var(--lightgrey);
