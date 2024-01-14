@@ -480,10 +480,6 @@ subgridFaq
 
     }
 
-
-
-
-
 /* Change any grid portion to left half */
 @media screen and (max-width: 1364px) {
     .thirdgrid2 {
@@ -731,6 +727,25 @@ Expand on these rules later for specific requiremnets e.g masonry */
 
 /* NEWSPAGE SETTINGS */
 /* structural controls */
+
+/* news page controls for featured article */
+.twothirdsgridright.featurednewsarticle{
+    grid-template-columns: 1fr !important;
+}
+@media screen and (max-width: 1364px) {
+
+.halfgridright.featurednewsarticle{
+    grid-column: 5 / 13 !important;
+}
+}
+@media screen and (max-width: 766px) {
+
+.halfgridright.featurednewsarticle{
+        grid-column: 2 / 13 !important;
+    }
+    }
+
+
 .newsgrid {
     grid-auto-flow: dense;
 }
@@ -748,9 +763,25 @@ Expand on these rules later for specific requiremnets e.g masonry */
     transition-property: background-color;
     transition-timing-function: ease;
     transition-duration: 700ms;
- 
-
-}
+ }
+ /* aspect ratio workaround for the bums*/
+.newsitem {
+    position: relative;
+  }
+  .imagebackground { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    }
+  .newsitem:before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+  }
+  
 .newsitem.blank {
    background-color:rgba(0,0,0,0);
 }

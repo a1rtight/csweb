@@ -251,3 +251,58 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// Controls for gifs on how to use page
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const elements = document.querySelectorAll('.howtousegif .imagebackground');
+        elements.forEach(bgDiv => {
+            const currentBackgroundImage = bgDiv.style.backgroundImage;
+            bgDiv.setAttribute('data-gif', currentBackgroundImage);
+        });
+    });
+
+    function isInRangeMobile(element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        // Calculate the viewport height percentages for 26vh and 10vh
+        const twentySixVh = windowHeight * 0.26;
+        const tenVh = windowHeight * 0.10;
+
+        // Check if the top of the element is between 26vh and 10vh from the top of the viewport
+        return rect.top <= twentySixVh && rect.top >= tenVh;
+    }
+
+    function isInRangeDesktop(element, lowerOffset, upperOffset) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        const withinLowerBound = rect.bottom > windowHeight - lowerOffset && rect.bottom <= windowHeight;
+        const notAboveUpperBound = rect.top < windowHeight + upperOffset;
+        return withinLowerBound && notAboveUpperBound;
+    }
+
+    window.addEventListener('scroll', () => {
+        const elements = document.querySelectorAll('.howtousegif .imagebackground');
+        elements.forEach(bgDiv => {
+            const gifUrl = bgDiv.getAttribute('data-gif');
+            const staticImageUrl = bgDiv.getAttribute('data-static-image');
+
+            const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+            if (viewportWidth <= 766) {
+                // Mobile behavior
+                if (isInRangeMobile(bgDiv)) {
+                    bgDiv.style.backgroundImage = gifUrl;
+                } else {
+                    bgDiv.style.backgroundImage = "url('" + staticImageUrl + "')";
+                }
+            } else {
+                // Desktop behavior
+                if (isInRangeDesktop(bgDiv, 200, 400)) {
+                    bgDiv.style.backgroundImage = gifUrl;
+                } else {
+                    bgDiv.style.backgroundImage = "url('" + staticImageUrl + "')";
+                }
+            }
+        });
+    });
+
