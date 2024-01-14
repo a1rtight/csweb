@@ -781,7 +781,7 @@ Expand on these rules later for specific requiremnets e.g masonry */
     width: 100%;
     padding-top: 100%;
   }
-  
+
 .newsitem.blank {
    background-color:rgba(0,0,0,0);
 }
@@ -857,6 +857,10 @@ Expand on these rules later for specific requiremnets e.g masonry */
 }
 .newsitem h2 {
     line-height: 1.8rem;
+    position: absolute;
+    top: .4rem;
+    left: .4rem;
+    z-index: 4;
 }
 /*arrow animation controls*/
 .arrow-container {
