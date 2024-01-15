@@ -208,6 +208,7 @@
     left: calc(2rem + 7px);
     width: calc((100vw - (4rem + 35px)) / 4);
     padding-bottom: 2.65rem;
+    z-index:30;
 }
 .headerlogo svg {
     display: block;
