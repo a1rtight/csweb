@@ -152,6 +152,9 @@
    figure.bold {
     margin-bottom: 0;
    }
+   a.currentmenuitem{
+    color: var(--black);
+   }
    
    @media screen and (max-width: 1364px) {
     h1 {
