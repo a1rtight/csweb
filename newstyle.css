@@ -1123,7 +1123,7 @@ mix-blend-mode: normal;
     }
 }
 @media screen and (max-width: 766px) {
-    .fullgrid.footer r{
+    .fullgrid.footer {
         margin-top: 7rem;
         padding-bottom: 1rem;
         border-top: 1px solid var(--lightgrey);
