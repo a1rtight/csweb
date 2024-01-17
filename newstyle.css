@@ -298,8 +298,8 @@ nav.mobilenav {
     /* Default state of the menu icon */
     .menu-icon {
         position: relative;
-        width: 32px;
-        height: 32px;
+        width: 2rem;
+        height: 2rem;
         transition: transform 0.3s ease;
     }
     .menu-icon span {
@@ -311,14 +311,14 @@ nav.mobilenav {
     }
     .menu-icon span:first-child {
         height: .11rem;
-        width: 32px;
+        width: 2rem;
         top: 50%;
         left: 0;
         transform: translateY(-50%);
     }
     .menu-icon span:last-child {
         width: .11rem;
-        height: 32px;
+        height: 2rem;
         left: 50%;
         top: 0;
         transform: translateX(-50%);
