@@ -271,6 +271,7 @@ nav.mobilenav {
         width: 2rem;
         justify-content: center;
         align-items: center;
+        z-index: 40;
     }
     @media screen and (max-width: 766px) {
         label[for=togglemenu] {
