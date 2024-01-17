@@ -1,36 +1,4 @@
 
-//Fix menu
-// Function to update menu position
-function updateMenuPosition() {
-    var menublock = document.querySelector('.menublock');
-    var scrollPosition = window.scrollY || window.pageYOffset;
-    var fixedPoint = 128; // Adjust as needed
-
-    if (window.matchMedia("(min-width: 1364px)").matches) {
-        if (scrollPosition > fixedPoint) {
-            menublock.style.position = 'fixed';
-            menublock.style.top = '-8rem';
-        } else {
-            menublock.style.position = 'absolute';
-            menublock.style.top = '0';
-        }
-    } else {
-        // Reset styles for tablet and mobile sizes
-        menublock.style.position = ''; // Resets to default or specify as needed
-        menublock.style.top = ''; // Resets to default or specify as needed
-    }
-}
-
-// Attach the updateMenuPosition function to scroll and resize events
-window.addEventListener('scroll', updateMenuPosition);
-window.addEventListener('resize', updateMenuPosition);
-
-// Call the function to set the initial position of the menu
-updateMenuPosition();
-
-
-
-
 
 //FAQ SEE MORE TOGGLES
     document.addEventListener('DOMContentLoaded', function () {
@@ -320,6 +288,36 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+//Fix menu
+// Function to update menu position
+function updateMenuPosition() {
+    var menublock = document.querySelector('.menublock');
+    var scrollPosition = window.scrollY || window.pageYOffset;
+    var fixedPoint = 128; // Adjust as needed
+
+    if (window.matchMedia("(min-width: 1364px)").matches) {
+        if (scrollPosition > fixedPoint) {
+            menublock.style.position = 'fixed';
+            menublock.style.top = '-8rem';
+        } else {
+            menublock.style.position = 'absolute';
+            menublock.style.top = '0';
+        }
+    } else {
+        // Reset styles for tablet and mobile sizes
+        menublock.style.position = ''; // Resets to default or specify as needed
+        menublock.style.top = ''; // Resets to default or specify as needed
+    }
+}
+
+// Attach the updateMenuPosition function to scroll and resize events
+window.addEventListener('scroll', updateMenuPosition);
+window.addEventListener('resize', updateMenuPosition);
+
+// Call the function to set the initial position of the menu
+updateMenuPosition();
+
 
 
    //backup for working gif autoplay - dt and mobile only
