@@ -222,6 +222,10 @@ nav a {
     height: 3.4rem;
     margin: 2.65rem 0 3.4rem 0;
 }
+   /* fix for multi column clickable area */
+   .headerlogo{
+    max-width:180px;
+    }
 /* serves as top body padding */
 .mobilemenublock {
     padding-top: 2.5rem;
