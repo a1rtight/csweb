@@ -320,6 +320,9 @@ updateMenuPosition();
 
 
 
+
+
+
    //backup for working gif autoplay - dt and mobile only
    
 //     document.addEventListener("DOMContentLoaded", function() {
@@ -379,3 +382,78 @@ updateMenuPosition();
 // const notAboveUpperBound = rect.top < windowHeight + upperOffset;
 // return withinLowerBound && notAboveUpperBound;
 // }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const elements = document.querySelectorAll('.howtousegif .imagebackground');
+    elements.forEach(bgDiv => {
+        const gifUrl = bgDiv.getAttribute('data-gif');
+        preloadImage(gifUrl); 
+
+        const currentBackgroundImage = bgDiv.style.backgroundImage;
+        bgDiv.setAttribute('data-gif', currentBackgroundImage);
+    });
+
+    window.addEventListener('scroll', checkGifPositions);
+});
+
+function preloadImage(url) {
+    const img = new Image();
+    img.src = url;
+}
+
+function checkGifPositions() {
+    const elements = document.querySelectorAll('.howtousegif .imagebackground');
+    elements.forEach(bgDiv => {
+        const gifUrl = bgDiv.getAttribute('data-gif');
+        const staticImageUrl = bgDiv.getAttribute('data-static-image');
+        const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+        if (viewportWidth <= 766) {
+            if (isInRangeMobile(bgDiv)) {
+                bgDiv.style.backgroundImage = gifUrl;
+            } else {
+                bgDiv.style.backgroundImage = "url('" + staticImageUrl + "')";
+            }
+        } else if (viewportWidth <= 1364) {
+            if (isInRangeMidSize(bgDiv)) {
+                bgDiv.style.backgroundImage = gifUrl;
+            } else {
+                bgDiv.style.backgroundImage = "url('" + staticImageUrl + "')";
+            }
+        } else {
+            if (isInRangeDesktop(bgDiv, 200, 400)) {
+                bgDiv.style.backgroundImage = gifUrl;
+            } else {
+                bgDiv.style.backgroundImage = "url('" + staticImageUrl + "')";
+            }
+        }
+    });
+}
+
+function isInRangeMobile(element) {
+    const rect = element.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    const twentySixVh = windowHeight * 0.32;
+    const tenVh = windowHeight * 0.05;
+    return rect.top <= twentySixVh && rect.top >= tenVh;
+}
+
+function isInRangeMidSize(element) {
+    const rect = element.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    const upperVh = windowHeight * 0.45; 
+    const lowerVh = windowHeight * 0.17; 
+    return rect.top <= upperVh && rect.top >= lowerVh;
+}
+
+function isInRangeDesktop(element, lowerOffset, upperOffset) {
+    const rect = element.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    const withinLowerBound = rect.bottom > windowHeight - lowerOffset && rect.bottom <= windowHeight;
+    const notAboveUpperBound = rect.top < windowHeight + upperOffset;
+    return withinLowerBound && notAboveUpperBound;
+}
+
+
+

@@ -261,6 +261,10 @@ nav.mobilenav {
         height: 2.62rem;
         margin: 1rem 0 1rem 0;
     }
+    /* fix for whole row being clickable area */
+    .headerlogo{
+        max-width:100px;
+        }
     label[for=togglemenu] {
         display: flex;
         position: absolute;
