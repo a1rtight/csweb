@@ -213,6 +213,10 @@
     padding-bottom: 2.65rem;
     z-index:30;
 }
+/* prevent lengthy menu hover blocks */
+nav a {
+    max-width: 10ch;
+    }
 .headerlogo svg {
     display: block;
     height: 3.4rem;
