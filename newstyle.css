@@ -241,7 +241,7 @@ nav.mobilenav {
     /* body {
         padding-top: 8rem;
     } */
-    .menublock a {
+    .menublock nav a {
         visibility: hidden;
     }
     .menublock {
