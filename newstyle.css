@@ -215,7 +215,7 @@
 }
 /* prevent lengthy menu hover blocks */
 nav a {
-    max-width: 10ch;
+    max-width: 14ch;
     }
 .headerlogo svg {
     display: block;
