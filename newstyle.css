@@ -36,7 +36,8 @@
    h2,
    p,
    figure,
-   a {
+   a,
+   h6 {
     font-family: "Twklausanne 300";
     font-weight: 300;
     max-width: 64ch;
@@ -116,7 +117,8 @@
     padding-bottom: 1rem ;
    }
    p,
-   nav a {
+   nav a,
+   h6 {
     font-size: 1.04rem;
     line-height: 1.85rem;
     letter-spacing: -0.03rem;
@@ -188,7 +190,8 @@
     span.extraparagraphbreak>h2 {
     padding-bottom: 2.02rem;
     }
-    p {
+    p,
+    h6 {
     font-size: 1.1rem;
     line-height: 1.8rem;
     letter-spacing: -0.015rem;
