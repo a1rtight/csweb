@@ -133,6 +133,7 @@
    }
    a {
     color: var(--basegrey);
+    max-width: max-content;
     text-decoration: none;
     transition-duration: 600ms;
     transition-property: color;
