@@ -72,7 +72,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
    }
-   .arrow {
+   .decorativearrow {
     margin-left: 25%;
     flex-shrink: 0;
     white-space: nowrap;
@@ -81,7 +81,7 @@
     margin-left: 25%;
    }
    @media screen and (max-width: 766px) {
-    .arrow{
+    .decorativearrow{
     margin-left: 1ch;
     }
     .tab{
